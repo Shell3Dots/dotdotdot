@@ -1,0 +1,56 @@
+{
+  "name": "dotdotdot",
+  "version": "1.0.0",
+  "description": "Say what you need. It handles the rest. Natural language terminal commands & multi-step tasks. Zero dependencies.",
+  "main": "lib/index.js",
+  "bin": {
+    "...": "./bin/dotdotdot.js",
+    "dotdotdot": "./bin/dotdotdot.js"
+  },
+  "scripts": {
+    "postinstall": "node lib/postinstall.js",
+    "test": "node bin/dotdotdot.js --help"
+  },
+  "engines": {
+    "node": ">= 18.0.0"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "keywords": [
+    "cli",
+    "ai",
+    "terminal",
+    "shell",
+    "natural-language",
+    "llm",
+    "command-line",
+    "dotdotdot",
+    "zero-dependencies",
+    "multi-step",
+    "task-planner",
+    "openrouter",
+    "anthropic",
+    "openai",
+    "gemini",
+    "devtools"
+  ],
+  "author": "Shell3Dots",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shell3Dots/dotdotdot.git"
+  },
+  "homepage": "https://github.com/Shell3Dots/dotdotdot#readme",
+  "bugs": {
+    "url": "https://github.com/Shell3Dots/dotdotdot/issues"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "README.md",
+    "LICENSE"
+  ]
+}
