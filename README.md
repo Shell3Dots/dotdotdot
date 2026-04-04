@@ -5,11 +5,11 @@
 </h1>
 
 <p align="center">
-  <code>npm install -g dotdotdot</code>
+  <code>npm install -g dotdotdot-cli</code>
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/dotdotdot"><img src="https://img.shields.io/npm/v/dotdotdot?color=blue&label=npm" alt="npm version" /></a>
+  <a href="https://www.npmjs.com/package/dotdotdot-cli"><img src="https://img.shields.io/npm/v/dotdotdot-cli?color=blue&label=npm" alt="npm version" /></a>
   <img src="https://img.shields.io/badge/dependencies-0-brightgreen" alt="zero dependencies" />
   <img src="https://img.shields.io/badge/node-%3E%3D18-green" alt="node version" />
   <img src="https://img.shields.io/badge/license-MIT-blue" alt="license" />
@@ -59,7 +59,7 @@
 ## Setup
 
 ```bash
-npm install -g dotdotdot
+npm install -g dotdotdot-cli
 ... -c                # add your API key (you need at least one)
 ... show my disk usage
 ```
