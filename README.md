@@ -10,6 +10,7 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/package/dotdotdot-cli"><img src="https://img.shields.io/npm/v/dotdotdot-cli?color=blue&label=npm" alt="npm version" /></a>
+  <a href="https://github.com/Shell3Dots/dotdotdot/actions/workflows/ci.yml?query=branch%3Amain"><img src="https://github.com/Shell3Dots/dotdotdot/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI" /></a>
   <img src="https://img.shields.io/badge/dependencies-0-brightgreen" alt="zero dependencies" />
   <img src="https://img.shields.io/badge/node-%3E%3D18-green" alt="node version" />
   <img src="https://img.shields.io/badge/license-MIT-blue" alt="license" />

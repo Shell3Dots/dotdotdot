@@ -2,6 +2,13 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.0.4] - 2026-04-06
+
+### Added
+
+- **CONTRIBUTING.md** and **SECURITY.md** for contributors and responsible disclosure.
+- **README:** CI status badge (default branch) next to npm.
+
 ## [1.0.3] - 2026-04-06
 
 ### Changed
@@ -41,6 +48,7 @@ All notable changes to this project are documented here. The format follows [Kee
 
 Initial public release as `dotdotdot-cli` on npm.
 
+[1.0.4]: https://github.com/Shell3Dots/dotdotdot/releases/tag/v1.0.4
 [1.0.3]: https://github.com/Shell3Dots/dotdotdot/releases/tag/v1.0.3
 [1.0.2]: https://github.com/Shell3Dots/dotdotdot/releases/tag/v1.0.2
 [1.0.1]: https://github.com/Shell3Dots/dotdotdot/releases/tag/v1.0.1
