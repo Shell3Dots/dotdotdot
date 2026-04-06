@@ -42,8 +42,8 @@ echo -e "  ${GREEN}✔${RESET} npm $(npm -v) detected"
 
 # ── Install ──
 echo ""
-echo -e "  ${DIM}Installing dotdotdot globally...${RESET}"
-npm install -g dotdotdot
+echo -e "  ${DIM}Installing dotdotdot-cli globally (dotdotdot / ... on PATH)...${RESET}"
+npm install -g dotdotdot-cli
 
 echo ""
 echo -e "  ${BOLD}${GREEN}✔ Done!${RESET}"
