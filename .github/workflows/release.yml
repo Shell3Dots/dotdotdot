@@ -1,0 +1,53 @@
+name: Release
+
+# Create a GitHub Release (notes + tarball) and publish to GitHub Packages when you push a version tag.
+# Public npm: publish separately with `npm publish` (package name: dotdotdot-cli).
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install & test
+        run: |
+          npm install
+          npm test
+
+      - name: Pack tarball for release asset
+        id: pack
+        run: |
+          TARBALL=$(npm pack | tail -1)
+          echo "tarball=$TARBALL" >> "$GITHUB_OUTPUT"
+          echo "Packed $TARBALL"
+
+      - name: GitHub Release (changelog + tarball)
+        uses: softprops/action-gh-release@v2
+        with:
+          body_path: CHANGELOG.md
+          files: ${{ steps.pack.outputs.tarball }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to GitHub Packages (scoped name)
+        run: |
+          # GitHub npm requires @owner/pkg; npmjs stays `dotdotdot-cli` when you publish locally.
+          npm pkg set name=@shell3dots/dotdotdot-cli
+          npm pkg set publishConfig.registry=https://npm.pkg.github.com
+          echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> .npmrc
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
