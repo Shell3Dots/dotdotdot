@@ -2,6 +2,16 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.0.3] - 2026-04-06
+
+### Changed
+
+- **LICENSE:** MIT copyright updated to **Shell3Dots** (2026).
+
+### Removed
+
+- **`postinstall` script:** No code runs at `npm install` time beyond extracting the package; the previous script only printed a welcome message.
+
 ## [1.0.2] - 2026-04-06
 
 ### Added
@@ -31,5 +41,6 @@ All notable changes to this project are documented here. The format follows [Kee
 
 Initial public release as `dotdotdot-cli` on npm.
 
+[1.0.3]: https://github.com/Shell3Dots/dotdotdot/releases/tag/v1.0.3
 [1.0.2]: https://github.com/Shell3Dots/dotdotdot/releases/tag/v1.0.2
 [1.0.1]: https://github.com/Shell3Dots/dotdotdot/releases/tag/v1.0.1

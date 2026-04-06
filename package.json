@@ -1,6 +1,6 @@
 {
   "name": "dotdotdot-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Say what you need. It handles the rest. Natural language terminal commands & multi-step tasks. Zero dependencies.",
   "main": "lib/index.js",
   "bin": {
@@ -8,7 +8,6 @@
     "dotdotdot": "bin/dotdotdot.js"
   },
   "scripts": {
-    "postinstall": "node lib/postinstall.js",
     "test": "node test/smoke.js"
   },
   "engines": {

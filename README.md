@@ -685,7 +685,6 @@ lib/
   llm.js                5 LLM providers, 2 prompt modes
   menu.js               Keyboard-driven selection menus
   planner.js            Multi-step task orchestrator
-  postinstall.js        Post-install welcome message
   renderer.js           Spinners, boxes, step indicators
   safety.js             Command risk analysis engine
   session.js            Session history & follow-ups
