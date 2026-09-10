@@ -498,7 +498,9 @@ Every command is checked for risk **before** it touches anything.
 |:---:|:---|:---|
 | **low** | Read-only, harmless | Runs freely (auto-exec if enabled) |
 | **medium** | Creates or modifies files | Runs with your OK |
-| **high** | Destructive (`rm -rf`, `sudo`, `dd`, etc.) | Blocked in auto-mode. Always asks. |
+| **high** | Destructive (`rm -rf`, `sudo`, `curl \| bash`, `iex`, `find -delete`, etc.) | Blocked in auto-mode and for `--yes` unless `--allow-dangerous`. Always asks in a TTY. |
+
+This is a **heuristic**, not a sandbox. Read every command. Without a TTY, nothing runs unless you pass **`--yes`**.
 
 ---
 
@@ -589,6 +591,8 @@ Custom pricing overrides built-in defaults.
 |:-----|:-------------|
 | `-t` `--task` | Force task mode |
 | `-p` `--provider` `<name>` | Switch provider for this request |
+| `-y` `--yes` | Skip confirmation and run (low/medium only; high-risk still blocked) |
+| `--allow-dangerous` | Allow high-risk commands (use with `--yes`, or to enable Execute in the menu) |
 | `-u` `--usage` | Token usage and cost stats |
 | `-c` `--config` | View and edit config |
 | `-d` `--debug` | Timing, provider info, debug log path |
