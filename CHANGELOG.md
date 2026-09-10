@@ -2,6 +2,24 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.0.5] - 2026-09-10
+
+### Added
+
+- **`--yes` / `-y`:** skip confirmation and run the suggested command (or task steps) non-interactively. High-risk commands still require **`--allow-dangerous`**.
+- **`--allow-dangerous`:** opt in to executing high-risk commands (with `--yes`, or to enable Execute in the interactive menu).
+- **Safety patterns:** `wget|curl | sh`, `iex` / `Invoke-Expression`, `find -delete`, `shutdown`/`reboot`, PowerShell `ri -Recurse`, and `eval`.
+- **CI:** macOS added to the test matrix (with Linux and Windows).
+
+### Changed
+
+- **Non-TTY:** menus no longer auto-select the first item (previously **Execute** / **Run**). Without a TTY, the command or plan is printed and nothing runs unless `--yes` is passed.
+- **`rm` classification:** medium risk requires `rm` used as a command with an argument, so substrings like `firmware` are not flagged.
+
+### Security
+
+- Risk analysis remains a **heuristic denylist**, not a sandbox. Always read the command before you run it.
+
 ## [1.0.4] - 2026-04-06
 
 ### Added
@@ -48,6 +66,7 @@ All notable changes to this project are documented here. The format follows [Kee
 
 Initial public release as `dotdotdot-cli` on npm.
 
+[1.0.5]: https://github.com/Shell3Dots/dotdotdot/releases/tag/v1.0.5
 [1.0.4]: https://github.com/Shell3Dots/dotdotdot/releases/tag/v1.0.4
 [1.0.3]: https://github.com/Shell3Dots/dotdotdot/releases/tag/v1.0.3
 [1.0.2]: https://github.com/Shell3Dots/dotdotdot/releases/tag/v1.0.2

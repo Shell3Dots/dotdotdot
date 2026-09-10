@@ -25,6 +25,7 @@ let flags = {
   config: false, debug: false, version: false, usage: false,
   resetTokens: false, clearSession: false,
   provider: null,
+  yes: false, allowDangerous: false,
 };
 
 for (let i = 0; i < args.length; i++) {
@@ -37,8 +38,10 @@ for (let i = 0; i < args.length; i++) {
     case '-h': case '--help':    flags.help = true; break;
     case '-d': case '--debug':   flags.debug = true; break;
     case '-v': case '--version': flags.version = true; break;
-     case '--reset-usage':        flags.resetTokens = true; break;
-     case '--clear':              flags.clearSession = true; break;
+    case '-y': case '--yes':     flags.yes = true; break;
+    case '--allow-dangerous':    flags.allowDangerous = true; break;
+    case '--reset-usage':        flags.resetTokens = true; break;
+    case '--clear':              flags.clearSession = true; break;
     default: if (!a.startsWith('-')) userInput += (userInput ? ' ' : '') + a; break;
   }
 }
@@ -68,6 +71,8 @@ for (let i = 0; i < args.length; i++) {
 
     const { loadConfig, resolveProvider, getAllProviderIds } = require('../lib/config');
     const config = loadConfig();
+    if (flags.yes) config.yes = true;
+    if (flags.allowDangerous) config.allowDangerous = true;
     if (flags.provider) {
       const resolved = resolveProvider(flags.provider);
       if (!resolved) {
